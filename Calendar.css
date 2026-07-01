@@ -1,3 +1,84 @@
 body{
     font-family: cursive;
 }
+#mustachemerc {
+    transform: rotate(270deg);
+}
+body{
+    margin:0;
+    background:#f5f5f5;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+.chat-container{
+    max-width:800px;
+    margin:40px auto;
+    background:white;
+    border-radius:10px;
+    overflow:hidden;
+    box-shadow:0 10px 30px rgba(0,0,0,.1);
+}
+
+h1{
+    margin:0;
+    padding:20px;
+    background:#2d6cdf;
+    color:white;
+}
+
+#messages{
+    height:500px;
+    overflow-y:auto;
+    padding:20px;
+}
+
+.message{
+    margin-bottom:18px;
+}
+
+.name{
+    font-weight:bold;
+    color:#2d6cdf;
+}
+
+.time{
+    color:#888;
+    font-size:.8em;
+    margin-left:8px;
+}
+
+.text{
+    margin-top:4px;
+}
+
+.input-area{
+    display:flex;
+    gap:10px;
+    padding:15px;
+    border-top:1px solid #ddd;
+}
+
+#nickname{
+    width:140px;
+}
+
+#messageInput{
+    flex:1;
+}
+
+input{
+    padding:10px;
+    font-size:16px;
+}
+
+button{
+    background:#2d6cdf;
+    color:white;
+    border:none;
+    padding:10px 18px;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#2458b5;
+}

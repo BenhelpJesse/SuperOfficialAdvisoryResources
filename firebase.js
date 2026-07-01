@@ -12,11 +12,9 @@ const firebaseConfig = {
 };
 
 const app = initializeApp(firebaseConfig);
-
 const db = getFirestore(app);
 const auth = getAuth(app);
 
-// safer pattern (avoids silent module issues)
 signInAnonymously(auth).catch(console.error);
 
 export { db };

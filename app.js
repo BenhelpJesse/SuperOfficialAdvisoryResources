@@ -100,7 +100,7 @@ onSnapshot(q, (snapshot) => {
         if (Notification.permission === "granted") {
             new Notification(`${m.name}`, {
                 body: m.text,
-                icon: "photos/testingphoto.jpg"
+                icon: "photos/IMG_8475.jpeg"
             });
         }
     }

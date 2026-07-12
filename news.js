@@ -1,5 +1,5 @@
 const API_KEY = "a6cc170cc29384d6c623a3e34b62deca";
-const TOPICS = ["oil gas energy markets", "financial markets stocks", "business economy"];
+const QUERY = "oil gas energy OR financial markets OR business economy";
 const MAX_HEADLINES = 10;
 let allArticles = [];
 
@@ -9,26 +9,19 @@ async function fetchNews() {
     newsList.innerHTML = "<li>Loading...</li>";
 
     try {
-        const fetched = [];
-
-    for (const topic of TOPICS) {
-        const url = `https://gnews.io/api/v4/search?q=${encodeURIComponent(topic)}&lang=en&max=4&token=${API_KEY}`;
+        const apiUrl = `https://gnews.io/api/v4/search?q=${encodeURIComponent(QUERY)}&lang=en&max=10&token=${API_KEY}`;
+        const url = `https://corsproxy.io/?${encodeURIComponent(apiUrl)}`;
         const res = await fetch(url);
         const data = await res.json();
         console.log("GNews response:", data);
-        if (data.articles) fetched.push(...data.articles);
-    }
 
-        const seen = new Set();
-        allArticles = fetched
-            .filter(a => {
-                if (seen.has(a.url)) return false;
-                seen.add(a.url);
-                return true;
-            })
-            .sort((a, b) => new Date(b.publishedAt) - new Date(a.publishedAt))
-            .slice(0, MAX_HEADLINES);
-        console.log("Total articles after debup:", allArticles.length);
+        if (!data.articles || data.articles.length === 0) {
+            newsList.innerHTML = "<li>No headlines found.</li>";
+            return;
+        }
+
+        allArticles = data.articles;
+        console.log("Total articles:", allArticles.length);
         renderHeadlines(5);
 
     } catch (err) {

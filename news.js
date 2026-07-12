@@ -1,4 +1,4 @@
-const API_KEY = "1e1ceb03cd4d4abf89dec55d5672ba20";
+const API_KEY = "a6cc170cc29384d6c623a3e34b62deca";
 const TOPICS = ["oil gas energy markets", "financial markets stocks", "business economy"];
 const MAX_HEADLINES = 10;
 let allArticles = [];
@@ -11,13 +11,13 @@ async function fetchNews() {
     try {
         const fetched = [];
 
-        for (const topic of TOPICS) {
-            const url = `https://newsapi.org/v2/everything?q=${encodeURIComponent(topic)}&language=en&sortBy=publishedAt&pageSize=4&apiKey=${API_KEY}`;
-            const res = await fetch(url);
-            const data = await res.json();
-            console.log("NewsAPI response:", data);
-            if (data.articles) fetched.push(...data.articles);
-        }
+    for (const topic of TOPICS) {
+        const url = `https://gnews.io/api/v4/search?q=${encodeURIComponent(topic)}&lang=en&max=4&token=${API_KEY}`;
+        const res = await fetch(url);
+        const data = await res.json();
+        console.log("GNews response:", data);
+        if (data.articles) fetched.push(...data.articles);
+    }
 
         const seen = new Set();
         allArticles = fetched

@@ -6,9 +6,18 @@
     <title>Calendar</title>
     <link rel="stylesheet" href="Calendar.css">
 </head>
+
 <body>
-    hi megan
-    <img src="photos/IMG_8475.jpeg" alt="overalls1" width="300">
+    hi megan. i built this for you. it will slowly get better and better. Look out for cool widgets coming soon.
+    <img src="photos/IMG_8475.jpeg" alt="overalls1" width="300" id="heropic">
+
+<div id="news-widget">
+    <h2>Market & Energy News</h2>
+    <ul id="news-list">
+        <li>Loading headlines...</li>
+    </ul>
+    <button id="show-more-btn" style="display:none;">Show More</button>
+</div>
 
 <button id="notifyBtn">🔔 Enable Notifications</button>
 
@@ -39,5 +48,6 @@
 </div>
 
 <script type="module" src="app.js"></script>
+<script src="news.js"></script>
 </body>
 </html>

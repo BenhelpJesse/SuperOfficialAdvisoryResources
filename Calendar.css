@@ -1,12 +1,8 @@
 body{
-    font-family: cursive;
-}
-
-body{
     margin:0;
     background:#2929297c;
     font-family:Arial, Helvetica, sans-serif;
-    text-decoration-color: aqua;
+    text-decoration-color: navy;
 }
 
 .chat-container{
@@ -21,7 +17,7 @@ body{
 h1{
     margin:0;
     padding:20px;
-    background:#2d6cdf;
+    background:#255abb;
     color:white;
 }
 
@@ -37,17 +33,24 @@ h1{
 
 .name{
     font-weight:bold;
-    color:#2d6cdf;
+    color:#7eb8f7;
+    background: rgba(0,0,0,0.3);
+    padding: 2px 8px;
+    border-radius: 10px;
 }
 
 .time{
-    color:#888;
+    color:#aaa;
     font-size:.8em;
     margin-left:8px;
+    background: rgba(0,0,0,0.2);
+    padding: 2px 6px;
+    border-radius: 10px;
 }
 
 .text{
     margin-top:4px;
+    color: #e0e0e0;
 }
 
 .input-area{
@@ -73,11 +76,88 @@ input{
 button{
     background:#2d6cdf;
     color:white;
-    border:none;
+    border:1px;
+    border-color: navy;
     padding:10px 18px;
     cursor:pointer;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
 }
 
 button:hover{
     background:#2458b5;
+}
+
+#heropic{
+    border-width: 1px;
+    border-style: solid;
+    margin-top: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+#news-widget{
+    position: fixed;
+    top: 30px;
+    right: 30px;
+    width: 300px;
+    background: rgb(70, 76, 77);
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    overflow: hidden;
+    z-index: 999;
+}
+
+#news-widget h2{
+    margin: 0;
+    padding: 14px 18px;
+    background: #255abb;
+    color: white;
+    font-size: 0.95em;
+    letter-spacing: 0.5px;
+}
+
+#news-list{
+    list-style: none;
+    margin: 0;
+    padding: 10px 0;
+}
+
+#news-list li{
+    padding: 10px 16px;
+    border-bottom: 1px solid rgba(255,255,255,0.07);
+    font-size: 0.85em;
+    line-height: 1.4;
+}
+
+#news-list li:last-child{
+    border-bottom: none;
+}
+
+#news-list a{
+    color: aqua;
+    text-decoration: none;
+}
+
+#news-list a:hover{
+    text-decoration: underline;
+}
+
+#show-more-btn{
+    display: block;
+    width: calc(100% - 32px);
+    margin: 8px 16px 12px;
+    padding: 7px;
+    background: #255abb;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.8em;
+}
+
+#show-more-btn:hover{
+    background: #2458b5;
 }
